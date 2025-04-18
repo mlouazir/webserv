@@ -1,12 +1,6 @@
 #include "header.hpp"
 #include <Server.hpp>
 
-void    lol()
-{
-    system("leaks webserv");
-    system("lsof -c webserv");
-}
-
 void signal_handler(int signal)
 {
     if (signal == SIGINT || signal == SIGQUIT)
@@ -25,7 +19,6 @@ void signal_handler(int signal)
 }
 
 int main(int ac, char **av) {
-    atexit(lol);
     vector<Server>  servers;
     Socket_map      sock_map;
     try {
